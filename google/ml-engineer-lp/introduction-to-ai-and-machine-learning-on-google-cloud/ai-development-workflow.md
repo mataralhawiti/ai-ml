@@ -75,3 +75,76 @@
     - Confusion matrix
     - Precision **correct**
     - Recall
+
+## Lab 2
+- Upload a dataset to Vertex AI.
+- Train a machine learning model with AutoML.
+- Evaluate the model performance.
+- Deploy the model to an endpoint.
+- Get predictions.-
+
+#### Vertex AI provides many metrics to evaluate the model performance. You focus on three:
+
+Precision/Recall curve
+Confusion Matrix
+Feature Importance
+
+
+The confusion matrix
+A confusion matrix tells you the percentage of examples from each class in your test set that your model predicted correctly.
+
+
+The feature importance
+In Vertex AI, feature importance is displayed through a bar chart to illustrate how each feature contributes to a prediction. The longer the bar, or the larger the numerical value associated with a feature, the more important it is.
+
+
+
+gcloud storage cp gs://spls/cbl455/cbl455.tar.gz .
+
+
+{"endpointId": "1411183591831896064", "instance": "[{age: 30.00, ClientID: '998', income: 50000.00, loan: 20000.00}]"}
+
+{"model_class":"0","model_score":1.0322887E-5}
+
+
+
+
+### 
+Prompt design
+You can feed your desired input text, e.g. a question, to the model. The model will then provide a response based on how you structured your prompt. The process of figuring out and designing the best input text (prompt) to get the desired response back from the model is called Prompt Design.
+
+There is no best way to design the prompts yet. Generally, there are 3 methods that you can use to shape the model's response in a way that you desired.
+
+Zero-shot prompting - This is a method where the LLM is given no additional data on the specific task that it is being asked to perform. Instead, it is only given a prompt that describes the task. For example, if you want the LLM to answer a question, you just prompt "what is prompt design?".
+One-shot prompting - This is a method where the LLM is given a single example of the task that it is being asked to perform. For example, if you want the LLM to write a poem, you might give it a single example poem.
+Few-shot prompting - This is a method where the LLM is given a small number of examples of the task that it is being asked to perform. For example, if you want the LLM to write a news article, you might give it a few news articles to read.
+
+
+
+You may also notice the FREE-FORM and STRUCTURED tabs in the image above. Those are the two modes that you can use when designing your prompt.
+
+FREE-FORM - 
+
+This mode provides a free and easy approach to design your prompt. It is suitable for small and experimental prompts with no additional examples. You will be using this to explore zero-shot prompting.
+STRUCTURED - This mode provides an easy-to-use template approach to prompt design. Context and multiple examples can be added to the prompt in this mode. This is especially useful for one-shot and few-shot prompting methods which you will be exploring later.
+
+=========================
+
+Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model’s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).
+
+Top-p changes how the model selects tokens for output. Tokens are selected from most probable to least until the sum of their probabilities equals the top-p value. For example, if tokens A, B, and C have a probability of .3, .2, and .1 and the top-p value is .5, then the model will select either A or B as the next token (using temperature).
+
+
+
+
+Temperature controls the degree of randomness in token selection. Lower temperatures are good for prompts that expect a true or correct response, while higher temperatures can lead to more diverse or unexpected results. With a temperature of 0 the highest probability token is always selected.
+
+
+Token limit determines the maximum amount of text output from one prompt. A token is approximately four characters.
+
+========================
+
+
+STRUCTURED mode, 
+
+you can design prompts in more organized ways. You can also provide Context and Examples in their respective input fields. This is a good opportunity to learn one-shot and few-shot prompting.
