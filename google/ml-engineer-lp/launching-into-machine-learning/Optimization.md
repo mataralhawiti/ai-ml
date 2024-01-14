@@ -50,3 +50,10 @@ TBE
 
 
 # Introduction to loss functions
+- analytical methods for finding the best set of model parameters don't scale.
+- think of optimizing our parameters as **searching through parameter space**, but to compare one point to another, we'll need some sort of *measure* (loss function).
+
+
+TBE
+
+# Gradient descent
