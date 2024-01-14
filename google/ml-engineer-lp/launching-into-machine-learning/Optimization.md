@@ -24,3 +24,29 @@
         - When we increase the *dimensionality* of the input, our slope term M must become *n-dimensional*. We call this new term the **weight**.
         - Visually this process yields the n-dimensional *generalization of a line*, which is called a **hyperplane**
         ![hyperplane](image-6.png)
+            - when we increase the dimensionality of the outputs, our Y and C terms must become vectors of dimensionality and two.
+            - The B term, whether as a scalar or a vector is referred to as the **bias** term.
+
+
+    - How a linear model can be used for regression ?
+        - b (bias) + m (weight) * x (input) = y (output)
+
+    - but how can a linear model be used for **classification?**
+        - In order to take our model's numerical output and turn it into a *class*, we need to first think about how *class membership can be encoded*
+            - The simplest way to encode class membership is with a binary. Either you're a member or you're not.
+            - we need a way to map our line onto a binary classification rule. One easy way to do this is to simply rely on the *side of the output*.
+            - Graphically that looks like dividing our graph into two regions, the points above the line and the points below it.
+            - we call that line **decision boundary**
+                - It's intended to be predictive of unseen data.
+                    - This property of extending to unseen examples is called **generalization**, and it's essential to ML models.
+
+            ![Alt text](image-8.png)
+
+
+
+# Introducing the course dataset
+
+TBE
+
+
+# Introduction to loss functions
